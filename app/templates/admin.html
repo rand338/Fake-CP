@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% block title %}Admin{% endblock %}
+
+{% endblock %}
+{% block content %}
+<div class="container-fluid" style="text-align:center;">
+	<div class="row" style="margin-top:25%;">
+		<div class="col-md-4">
+			<div class="list-group">
+  				<a href="/users" class="list-group-item">Users</a>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="list-group">
+  				<a href="/" class="list-group-item">Login Page</a>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="list-group">
+  				<a href="/clear" class="list-group-item list-group-item-danger">Delete DB</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% block title %}Clear{% endblock %}
+{% endblock %}
+
+{% block content %}
+
+<div class="alert alert-success" role="alert">
+  DB was cleared!
+</div>
+
+<a class="btn btn-primary" href="/admin" role="button">Back to admin page</a>
+
+{% endblock %}
