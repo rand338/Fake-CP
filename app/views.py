@@ -1,6 +1,7 @@
 from flask import Flask, Blueprint, render_template, request, redirect
 import sqlite3 as sql
 import datetime
+import httpagentparser
 
 login_blueprint = Blueprint('login', __name__, template_folder='templates')
 users_blueprint = Blueprint('users', __name__, template_folder='templates')
@@ -9,13 +10,14 @@ admin_blueprint = Blueprint('admin', __name__, template_folder='templates')
 
 app = Flask(__name__)
 
-def insert_readings(user, passwd, time):
+def insert_readings(user, passwd, time, UA):
     DATABASE = 'test.db'
     with sql.connect(DATABASE) as con:
         cur = con.cursor()
         #cur.execute("CREATE TABLE users (user TEXT, passwd TEXT, time DATETIME)")
         #cur.execute("alter table users add column time DATETIME")
-        cur.execute("INSERT INTO users (user, passwd, time) VALUES (?,?,?)", (user, passwd, time))
+        #cur.execute("alter table users add column UA TEXT")
+        cur.execute("INSERT INTO users (user, passwd, time, UA) VALUES (?,?,?,?)", (user, passwd, time, UA))
         con.commit()
 
 
@@ -26,8 +28,12 @@ def login():
         passwd = request.form['passwd']
         currentDT = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
         time = str(currentDT)
+        UA = request.headers.get('User-Agent')
+        UA = httpagentparser.simple_detect(UA)
+        UA = ' '.join(UA)
+        print (UA)
+        insert_readings(user, passwd, time, UA)
 
-        insert_readings(user, passwd, time)
         return redirect("/users")
 
     return render_template('index2.html')

@@ -15,6 +15,7 @@
     <th> User </th>
     <th> Password </th>
     <th> Time </th>
+    <th> User-Agent </th>
 <tr>
 </thead>
 <tbody>
@@ -23,9 +24,10 @@
     <td>{{ user[0] }}</td>
     <td>{{ user[1] }}</td>
     <td>{{ user[2] }}</td>
+    <td>{{ user[3] }}</td>
 </tr>
 {% endfor %}
 </tbody>
 </table>
-<p>PASSWORD AVG LENGTH: {{ passwdAvg }}
+<p>PASSWORD AVG LENGTH: {{ passwdAvg }}</p>
 {% endblock %}
