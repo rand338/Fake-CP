@@ -1,5 +1,10 @@
 ### Installation
 #### Virtual Environment [recommended]
+##### Dependencies
+```shell
+$ sudo apt install python3-venv
+```
+##### Run venv
 ```shell
 $ . venv/bin/activate
 $ python3 run.py
