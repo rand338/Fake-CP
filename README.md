@@ -12,6 +12,6 @@ $ python3 run.py
 
 ### Usage
 
-Admin URL: ```http://127.0.0.1:5000/admin```
+Administrative URL: ```http://127.0.0.1:5000/admin```
 
 ![](img.png)
