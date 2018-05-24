@@ -14,3 +14,4 @@ $ python3 run.py
 
 Admin URL: ```http://127.0.0.1:5000/admin```
 
+![](img.png)
