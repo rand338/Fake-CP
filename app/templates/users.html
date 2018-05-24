@@ -3,11 +3,14 @@
 {% block title %}Users{% endblock %}
 {% endblock %}
 {% block content %}
-<a class="btn btn-primary btn-sm" href="/admin" role="button"><span class="glyphicon glyphicon-arrow-left"></span> Back to the admin page</a>
 
-        <a href="/users" class="btn btn-info btn-sm">
+<div id="mininav">
+<a class="btn btn-sm" href="/admin" role="button"><span class="glyphicon glyphicon-arrow-left"></span> Back to the admin page</a>
+
+        <a href="/users" class="btn btn-sm">
           <span class="glyphicon glyphicon-refresh"></span> Refresh
         </a>
+</div>
 
 <table class="table table-hover">
 <thead>
