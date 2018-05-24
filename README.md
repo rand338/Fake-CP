@@ -1,5 +1,5 @@
 ### Usage
-#### Virtual Environment [recommend]
+#### Virtual Environment [recommended]
 ```shell
 $ . venv/bin/activate
 $ python3 run.py
