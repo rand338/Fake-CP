@@ -14,7 +14,7 @@ $ python run.py
 #### Base OS
 ```shell
 $ pip install -r requirements.txt
-$ python run.py
+$ python3 run.py
 ```
 
 ### Usage
