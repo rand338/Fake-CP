@@ -1,4 +1,4 @@
-#!/home/alexfrancow/fakeap/venv/bin/python
+#!/home/alexfrancow/github/Fake-CP/venv/bin/python3
 # See http://cens.ioc.ee/projects/f2py2e/
 from __future__ import division, print_function
 

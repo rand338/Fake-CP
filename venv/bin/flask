@@ -1,4 +1,4 @@
-#!/home/alexfrancow/fakeap/venv/bin/python
+#!/home/alexfrancow/github/Fake-CP/venv/bin/python3
 
 # -*- coding: utf-8 -*-
 import re
