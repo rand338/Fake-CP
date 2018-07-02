@@ -19,7 +19,7 @@ $ python3 run.py
 
 ### Usage
 
-Administrative URL: ```http://127.0.0.1:5000/admin```
+Administrative URL: ```http://127.0.0.1:5000/admin``` ~ ```http://127.0.0.1:5000/users```
 
 ![](admin_panel.png)
 
