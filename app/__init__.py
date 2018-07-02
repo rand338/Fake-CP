@@ -9,7 +9,6 @@ Autor: alexfrancow
 
 from flask import Flask
 
-
 ################
 #### config ####
 ################
