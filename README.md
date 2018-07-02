@@ -22,3 +22,9 @@ $ python3 run.py
 Administrative URL: ```http://127.0.0.1:5000/admin```
 
 ![](img.png)
+
+### Fake Web
+
+URL: ```http://127.0.0.1:5000```
+
+![](fake_web.png)
