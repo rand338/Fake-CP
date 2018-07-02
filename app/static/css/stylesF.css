@@ -217,8 +217,9 @@ input:focus,select:focus,textarea:focus,button:focus{
     background: rgba(251, 249, 249, 0.45);
 }
 /* Responsive */
+/*
 @media (max-width:768px){
     body{padding-top:0px}
     .header{position:relative;}
     .header .logo{text-align:center}
-}
+}*/

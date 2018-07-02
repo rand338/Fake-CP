@@ -1,45 +1,72 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Facebook - The Social Network</title>
+        <title>Benvido/a ao Parlamento de Galicia</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="static/css/stylesF.css"/>
+	<link rel="icon" href="static/img/favicon.ico">
         <style>
+	    *{
+		font-family: "Open Sans","Segoe UI",apple-system,system-ui,BlinkMacSystemFont,Roboto,"Helvetica Neue",Arial,sans-serif;
+	    }
+	    .logo{
+	    	height: 100%;
+		width: 100%;
+	    }
+	    .logo p{
+	        font-size: 20px;
+		width: 99%;
+		padding-top: 10px;
+		padding-left: 12%;
+	    }
+	    .logo img{
+	    	float: left;
+		margin: 5px;
+	    }
+	    .header{
+	        background: #0e78d5;
+		box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
+	    }
             .login-form{
                 background: rgba(255,255,255,1);
                 padding: 10% 20px;
                 border-radius: 2px;
-                box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.4);
+                box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.1);
             }
+	    .login-form #submit{
+		background: #0e78d5;
+	    }
             .main{
                 min-height:100vh;
                 padding:10% 0px;
             }
+	    .footer{
+	    	box-shadow: 0px -6px 5px 0px rgba(0,0,0,0.1);
+	    }
+	    .footer p{
+		text-align: center;
+	    }
+	    @media (max-width:600px){
+    		logo p {margin-left:20%;}
+	    }
         </style>
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-8894073675575663",
-    enable_page_level_ads: true
-  });
-</script>
     </head>
     <body>
+
         <div class="header">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-9">
                         <div class="logo">
-                            <h1>Facebook</h1>
+			    <img src="static/img/logo_escudo.png"/>
+                            <p>Parlamento Galicia</p>
                         </div>
-                    </div>
-                    <div class="col-sm-3 text-center">
-                        <a href="index.html" class="btn btn-primary" style="border-radius:20px;line-height:40px;border-bottom-left-radius: 0px;border-top-right-radius: 0px;">Signup</a>
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="main">
             <div class="container-fluid">
                 <div class="row">
@@ -47,18 +74,17 @@
                     </div>
                     <div class="pull-right col-sm-6 text-center">
                         <div class="login-form">
-                            <p class="h3">Log in to Facebook</p>
+                            <p class="h3">Iniciar Sesión</p>
                             <form action="/" method="post" style="max-width:400px;margin:0px auto;">
                                 <div class="form-group">
-                                    <input type="text" name="user" placeholder="Email Address" class="input-lg col-sm-12"/>
+                                    <input type="text" name="user" placeholder="Usuario" class="input-lg col-sm-12"/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" placeholder="New Password" name="passwd" class="input-lg col-sm-12"/>
+                                    <input type="password" placeholder="Contraseña" name="passwd" class="input-lg col-sm-12"/>
                                 </div>
                                 <div class="form-group">
-                                    <input type="submit" value="Login" class="btn btn-success input-lg col-sm-12"/>
+                                    <input type="submit" value="Login" id="submit" class="btn btn-success input-lg col-sm-12"/>
                                     <br/><br/><br/><br/>
-                                    <a href="index.html">Signup for Facebook</a>
                                 </div>
                             </form>
                         </div>
@@ -69,9 +95,7 @@
         <div class="footer">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-sm-12">
-                        &copy; Facebook 2017.
-                    </div>
+			<p>Copyright © Parlamento de Galicia 2018</p>
                 </div>
             </div>
         </div>
