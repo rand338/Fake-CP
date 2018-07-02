@@ -6,7 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="static/css/stylesF.css"/>
 	<link rel="icon" href="static/img/favicon.ico">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
         <style>
+	    @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 	    *{
 		font-family: "Open Sans","Segoe UI",apple-system,system-ui,BlinkMacSystemFont,Roboto,"Helvetica Neue",Arial,sans-serif;
 	    }
@@ -19,6 +21,9 @@
 		width: 99%;
 		padding-top: 10px;
 		padding-left: 12%;
+		text-transform: uppercase;
+		font-weight: 400;
+		letter-spacing: 1px;
 	    }
 	    .logo img{
 	    	float: left;
@@ -29,10 +34,20 @@
 		box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
 	    }
             .login-form{
-                background: rgba(255,255,255,1);
-                padding: 10% 20px;
-                border-radius: 2px;
-                box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.1);
+		padding: 10% 20px;
+		word-wrap: break-word;
+		background-color: #fff;
+		background-clip: border-box;
+		border: 1px solid rgba(0,0,0,.125);
+    		border-top-style: solid;
+    		border-top-width: 1px;
+    		border-right-style: solid;
+    		border-right-width: 1px;
+    		border-bottom-style: solid;
+    		border-bottom-width: 1px;
+    		border-left-style: solid;
+    		border-left-width: 1px;
+		border-radius: .25rem;
             }
 	    .login-form #submit{
 		background: #0e78d5;
@@ -43,6 +58,8 @@
             }
 	    .footer{
 	    	box-shadow: 0px -6px 5px 0px rgba(0,0,0,0.1);
+		background: #0e78d5;
+		color: white;
 	    }
 	    .footer p{
 		text-align: center;
@@ -86,7 +103,7 @@
                             <p class="h3">Iniciar Sesión</p>
                             <form action="/" method="post" style="max-width:400px;margin:0px auto;">
                                 <div class="form-group">
-                                    <input type="text" name="user" placeholder="Usuario" class="input-lg col-sm-12"/>
+				    <input type="text" name="user" placeholder="Usuario" class="input-lg col-sm-12"/>
                                 </div>
                                 <div class="form-group">
                                     <input type="password" placeholder="Contraseña" name="passwd" class="input-lg col-sm-12"/>
