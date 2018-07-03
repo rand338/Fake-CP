@@ -39,6 +39,9 @@
 <div class='button'>
 	<a href="#" id ="export" role='button'><i class="fas fa-file-excel"></i> Download .csv</a>
 </div>
+<div class='button'>
+        <a href="/db" id ="export" role='button'><i class="fas fa-database"></i> Download .db</a>
+</div>
 <p>PASSWORD AVG LENGTH: {{ passwdAvg }}</p>
 </body>
 {% endblock %}
@@ -118,8 +121,8 @@
 
             // This must be a hyperlink
             $("#export").click(function (event) {
-                // var outputFile = 'export'
-                var outputFile = window.prompt("What do you want to name your output file") || 'export';
+                var outputFile = 'export'
+                //var outputFile = window.prompt("What do you want to name your output file") || 'export';
                 outputFile = outputFile.replace('.csv','') + '.csv'
                  
                 // CSV

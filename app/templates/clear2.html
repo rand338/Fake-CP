@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% block title %}Clear{% endblock %}
+{% endblock %}
+
+{% block content %}
+
+<div id="mininav" class="navbar-default navbar-fixed-top">
+<a class="btn btn-sm" href="/admin" role="button"><span class="glyphicon glyphicon-arrow-left"></span> Back to the admin page</a>
+</div>
+
+<form method="post" action="/clear">
+  <div class="form-group">
+    <label for="exampleInputConfirmation">Are you absolutely sure? ~ This action cannot be undone. </label>
+    <input type="text" class="form-control" id="exampleInputConfirmation" name="confirmation" placeholder="Type: galicia">
+  </div>
+  <button type="submit" class="btn btn-primary">I understand the consequences, delete this BD</button>
+</form>
+
+
+{% endblock %}
