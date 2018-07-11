@@ -59,13 +59,13 @@ def login():
         UA = request.headers.get('User-Agent')
         UA = httpagentparser.simple_detect(UA)
         UA = ' '.join(UA)
-	remote_IP = request.remote_addr
+        remote_IP = request.remote_addr
         print (UA)
         insert_readings(user, passwd, time, UA, remote_IP)
-	print(remote_IP)
-	subprocess.call(["iptables","-t", "nat", "-I", "PREROUTING","1", "-s", remote_IP, "-j" ,"ACCEPT"])
-	subprocess.call(["iptables", "-I", "FORWARD", "-s", remote_IP, "-j" ,"ACCEPT"])
-	return redirect("https://www.google.es", code=302)
+        print(remote_IP)
+        subprocess.call(["iptables","-t", "nat", "-I", "PREROUTING","1", "-s", remote_IP, "-j" ,"ACCEPT"])
+        subprocess.call(["iptables", "-I", "FORWARD", "-s", remote_IP, "-j" ,"ACCEPT"])
+        return redirect("https://www.google.es", code=302)
 
     return render_template('index2.html')
 
@@ -83,9 +83,9 @@ def users():
 @clear_blueprint.route('/clear', methods=['GET', 'POST'])
 def clear():
     if request.method == 'POST':
-    	if "galicia" in request.form['confirmation']:
+        if "galicia" in request.form['confirmation']:
             DATABASE = 'test.db'
-    	    with sql.connect(DATABASE) as con:
+            with sql.connect(DATABASE) as con:
                 cur = con.cursor()
                 res = cur.execute("DELETE FROM users")
                 return render_template('clear.html')
