@@ -48,3 +48,28 @@ Chain POSTROUTING (policy ACCEPT 0 packets, 0 bytes)
     6   378 MASQUERADE  all  --  *      wlan0   0.0.0.0/0            0.0.0.0/0
 
 ```
+#### Network Interfaces
+
+```bash
+root@kali:~/github/Fake-CP# iwconfig
+lo        no wireless extensions.
+
+wlan1     IEEE 802.11  Mode:Monitor  Frequency:2.442 GHz  Tx-Power=18 dBm
+          Retry short limit:7   RTS thr:off   Fragment thr:off
+          Power Management:off
+
+eth0      no wireless extensions.
+
+wlan0     IEEE 802.11  ESSID:"Empresa2"
+          Mode:Managed  Frequency:2.442 GHz  Access Point: 00:1F:45:7F:DD:18
+          Bit Rate=65 Mb/s   Tx-Power=31 dBm
+          Retry short limit:7   RTS thr:off   Fragment thr:off
+          Encryption key:off
+          Power Management:on
+          Link Quality=35/70  Signal level=-75 dBm
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:192  Invalid misc:0   Missed beacon:0
+
+at0       no wireless extensions.
+
+```
