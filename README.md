@@ -19,13 +19,13 @@ $ python3 app.py
 
 ### Usage
 
-Administrative URL: ```http://127.0.0.1:5000/admin``` ~ ```http://127.0.0.1:5000/users```
+Administrative URL: ```http://10.0.0.1/admin``` ~ ```http://10.0.0.1/users```
 
 ![](admin_panel.png)
 
 ### Fake Web
 
-URL: ```http://127.0.0.1:5000```
+URL: ```http://10.0.0.1```
 
 ![](fake_web.png)
 
