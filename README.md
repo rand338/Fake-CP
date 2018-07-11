@@ -73,3 +73,51 @@ wlan0     IEEE 802.11  ESSID:"Empresa2"
 at0       no wireless extensions.
 
 ```
+
+#### Network Address
+
+```bash
+root@kali:~/github/Fake-CP# ifconfig
+at0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.0.1  netmask 255.255.255.0  broadcast 10.0.0.255
+        inet6 fe80::2c0:caff:fe96:619c  prefixlen 64  scopeid 0x20<link>
+        ether 00:c0:ca:96:61:9c  txqueuelen 1000  (Ethernet)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 12  bytes 928 (928.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.1.111  netmask 255.255.255.0  broadcast 192.168.1.255
+        inet6 fe80::ba27:ebff:fe83:b099  prefixlen 64  scopeid 0x20<link>
+        ether b8:27:eb:83:b0:99  txqueuelen 1000  (Ethernet)
+        RX packets 24373  bytes 1436088 (1.3 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 19677  bytes 2102162 (2.0 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1  (Local Loopback)
+        RX packets 0  bytes 0 (0.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 0  bytes 0 (0.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlan0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.4.139  netmask 255.255.255.0  broadcast 192.168.4.255
+        inet6 fe80::ba27:ebff:fed6:e5cc  prefixlen 64  scopeid 0x20<link>
+        ether b8:27:eb:d6:e5:cc  txqueuelen 1000  (Ethernet)
+        RX packets 28891  bytes 11393389 (10.8 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 27256  bytes 13641554 (13.0 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+wlan1: flags=867<UP,BROADCAST,NOTRAILERS,RUNNING,PROMISC,ALLMULTI>  mtu 1800
+        unspec 00-C0-CA-96-61-9C-30-30-00-00-00-00-00-00-00-00  txqueuelen 1000  (UNSPEC)
+        RX packets 2351233  bytes 0 (0.0 B)
+        RX errors 0  dropped 1347173  overruns 0  frame 0
+        TX packets 421036  bytes 27649687 (26.3 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+```
