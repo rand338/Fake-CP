@@ -1,10 +1,9 @@
 ### Installation
-#### Virtual Environment [recommended]
 ##### Dependencies
 ```sh
 $ sudo apt install python3-venv
 ```
-##### Run venv
+##### Run on venv [recommended]
 ```sh
 $ . venv/bin/activate
 (venv)$ python -V
@@ -16,11 +15,6 @@ $ python3 app.py
 [?] Please enter the SSID for the AP: Telefonia2
 [?] Please enter the BSSID for the AP: 00:1F:45:7F:DD:1B
 [?] Please enter the channel for the AP: 7
-```
-#### Base OS
-```sh
-$ pip install -r requirements.txt
-$ python3 app.py
 ```
 
 ### Usage
@@ -35,7 +29,7 @@ URL: ```http://127.0.0.1:5000```
 
 ![](fake_web.png)
 
-### IPTABLES
+### IPTables
 
 ```bash
 root@kali:~/github/Fake-CP# iptables -nvL -t nat
