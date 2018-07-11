@@ -67,10 +67,11 @@ try:
     os.system("route add -net 10.0.0.0 netmask 255.255.255.0 gw 10.0.0.1")
     os.system("echo 1 > /proc/sys/net/ipv4/ip_forward")
     os.system("iptables -F")
+    os.system("iptables -t nat -F")
 
     os.system("iptables -N internet -t mangle")
     os.system("iptables -t mangle -A PREROUTING -j internet")
-  
+
     os.system("iptables -A FORWARD -i at0 -p tcp --dport 443 -j DROP")
     os.system("iptables -A FORWARD -i wlan1 -p tcp --dport 443 -j DROP")
     os.system("iptables -A FORWARD -i wlan0 -p tcp --dport 443 -j DROP")
@@ -84,7 +85,7 @@ try:
     os.system("iptables --append FORWARD -j ACCEPT --in-interface at0")
 
     os.system("iptables -A FORWARD -i wlan0 -p tcp --dport 22 -d 192.168.1.111 -j ACCEPT")
-    os.system("iptables -t nat -A PREROUTING -d 0/0 -p tcp --dport 80 -j DNAT --to-destination 10.0.0.1:80")
+    os.system("iptables -t nat -A PREROUTING -i at0 -d 0/0 -p tcp --dport 80 -j DNAT --to-destination 10.0.0.1:80")
     os.system("iptables -A FORWARD -i wlan1 -j DROP")
 
     #DHCP CONFIG
