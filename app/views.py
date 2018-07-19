@@ -23,6 +23,7 @@ users_blueprint = Blueprint('users', __name__, template_folder='templates')
 clear_blueprint = Blueprint('clear', __name__, template_folder='templates')
 admin_blueprint = Blueprint('admin', __name__, template_folder='templates')
 db_blueprint = Blueprint('db', __name__, template_folder='templates')
+android_blueprint = Blueprint('android', __name__, template_folder='templates')
 
 ################
 #### config ####
@@ -102,6 +103,11 @@ def download_file():
     print(UPLOAD_FOLDER)
     return send_from_directory(UPLOAD_FOLDER,
                                'test.db', as_attachment=True)
+
+@android_blueprint.route('/generate_204')
+@android_blueprint.route('/gen_204')
+def android():
+    return(''), 200
 
 if __name__ == '__main__':
     app.run(debug= True)

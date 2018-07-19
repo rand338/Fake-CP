@@ -102,7 +102,7 @@ try:
 
     #DNS CONFIG
     
-    hosts_config = "127.0.0.1	localhost\n10.0.0.1    connectivitycheck.android.com\n10.0.0.1    connectivitycheck.gstatic.com\n10.0.0.1    clients1.google.com\n10.0.0.1	clients3.google.com\n10.0.0.1	clients.l.google.com\n"
+    hosts_config = "127.0.0.1	localhost\n10.0.0.1	http://connectivitycheck.android.com/generate_204\n10.0.0.1    http://connectivitycheck.gstatic.com/generate_204\n"
     print("[I] Backing up /etc/hosts...")
     os.system("sudo cp /etc/hosts /etc/hosts.backup")
     print("[I] Deleting old config file...")
