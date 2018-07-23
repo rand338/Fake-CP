@@ -22,6 +22,7 @@ try:
     if update == "y" or update == "":
         print("[I] Checking/Installing dependencies, please wait...")
         os.system("sudo apt-get update")
+        os.system("sudo apt-get install hostapd -y")
         os.system("sudo apt-get install aircrack-ng -y")
         os.system("sudo apt-get install dnsmasq -y")
         os.system("sudo apt-get install isc-dhcp-server -y")
@@ -59,12 +60,21 @@ try:
         else:
             print("[!] Please enter a channel number.")
 
-    print("[I] Starting Fake AP...")
-    #subprocess.Popen(["airbase-ng", "-e", ssid, "-a", bssid, "-c", channel, ap_iface])
-    subprocess.Popen(["airbase-ng", "-a", bssid, "-e", ssid, "-c", channel, ap_iface])
-    print("[I] Configuring IP on at0")
-    time.sleep(3)
-    os.system("ifconfig at0 10.0.0.1 netmask 255.255.255.0")
+
+    fakeap = input("[?] Airbase-ng or hostapd? (A/h)")
+    if A in fakeap:
+        print("[I] Starting Fake AP with airbase-ng...")
+        #subprocess.Popen(["airbase-ng", "-e", ssid, "-a", bssid, "-c", channel, ap_iface])
+        subprocess.Popen(["airbase-ng", "-a", bssid, "-e", ssid, "-c", channel, ap_iface])
+        print("[I] Configuring IP on at0")
+        time.sleep(3)
+        os.system("ifconfig at0 10.0.0.1 netmask 255.255.255.0")
+    else:
+        print("[I] Starting Fake AP with hostapd...")
+        os.system("hostapd -dd hostapd.conf")
+        print("[I] Configuring IP on at0")
+        time.sleep(3)
+        os.system("ifconfig at0 10.0.0.1 netmask 255.255.255.0")
 
     #IPTABLES
     os.system("route add -net 10.0.0.0 netmask 255.255.255.0 gw 10.0.0.1")
