@@ -15,6 +15,7 @@ $ python3 app.py
 [?] Please enter the SSID for the AP: Telefonia2
 [?] Please enter the BSSID for the AP: 00:1F:45:7F:DD:1B
 [?] Please enter the channel for the AP: 7
+[?] Airbase-ng or hostapd? (A/h): A
 ```
 
 ### Usage
