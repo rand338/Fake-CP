@@ -122,3 +122,30 @@ wlan1: flags=867<UP,BROADCAST,NOTRAILERS,RUNNING,PROMISC,ALLMULTI>  mtu 1800
         TX packets 421036  bytes 27649687 (26.3 MiB)
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 ```
+
+## How it works?
+
+When a device is connected to the AP, it send a request like: "GET /generate_204 HTTP/1.1":
+
+```bash
+	dnsmasq-dhcp: DHCPREQUEST(at0) 10.0.0.64 30:07:4d:07:6f:6e 
+	dnsmasq-dhcp: DHCPACK(at0) 10.0.0.64 30:07:4d:07:6f:6e Galaxy-S8
+ 10.0.0.64 - - [19/Jul/2018 07:02:22] "GET /generate_204 HTTP/1.1" 404 -
+ 10.0.0.64 - - [19/Jul/2018 07:03:22] "GET /gen_204 HTTP/1.1" 404 - 
+```
+
+Android uses a Network Portal detection using the URL http://clients3.google.com/generate_204. This will return a 204 HTTP response without content when requesting it from the actual Google servers. Captive Portals/Network Portals will return something else (usually a splash page) and keep the requested page URL somewhere in their database. The Android device notices it and shows a notification that this wireless network needs authentication. Pressing this notification will open a browser with the splash page (just by requesting the http://clients3.google.com/generate_204 again). The user can now use some kind of form (e.g. a button) to enter the network. Usually, you will get automatically forwarded by the Network Portal/Captive Portal to the URL you've requested in the first place.
+
+- If we send a 404 code, Android will notify that this AP does not have Internet access.
+- If we send a 204 code, Android will thinks we have Internet access.
+- IF we send a 302 redirect with the URL of the captive portal, Android will notify that it is a captive portal.
+
+We can implenet all those codes with Flask in this way:
+
+```python
+			@app.route('/generate_204')
+			@app.route('/gen_204')
+			def android():
+			    #return ('', 204)
+        return redirect("http://10.0.0.1/", code=302)
+```
