@@ -213,4 +213,36 @@ Now we need to tell our DNS to point those addresses to at0 (Fake-AP interface).
 	test|test|2018-07-24 10:12|Android Linux 7.0 Chrome 67.0.3396.87|10.0.0.47
 ```
 
+#### DNS
+
+	Android Captive Portal Detection
+		® clients3.google.com (Desde el 1 hasta el 9)
+	 
+	Apple iPhone, iPad with iOS 6 Captive Portal Detection
+		® gsp1.apple.com
+		® *.akamaitechnologies.com
+		® www.apple.com
+		® apple.com
+		® captive.apple.com
+	 
+	Apple iPhone, iPad with iOS 7, 8, 9 and recent versions of OS X
+		® www.appleiphonecell.com
+		® *.apple.com
+		® www.itools.info
+		® www.ibook.info
+		® www.airport.us
+		® www.thinkdifferent.us
+		® *.apple.com.edgekey.net
+		® *.akamaiedge.net
+		® *.akamaitechnologies.com
+	  
+	Windows
+		® ipv6.msftncsi.com
+		® ipv6.msftncsi.com.edgesuite.net
+		® www.msftncsi.com
+		® www.msftncsi.com.edgesuite.net
+		® teredo.ipv6.microsoft.com
+		® teredo.ipv6.microsoft.com.nsatc.net
+		® gstatic.com  --> GET a /generate_204
+		® msftconnecttest.com  --> "GET a /redirect" o "GET /connecttest.txt" (W10
 
