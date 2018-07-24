@@ -216,7 +216,7 @@ Now we need to tell our DNS to point those addresses to at0 (Fake-AP interface).
 #### DNS
 
 	Android Captive Portal Detection
-		® clients3.google.com (Desde el 1 hasta el 9)
+		® clients3.google.com (1-9)
 	 
 	Apple iPhone, iPad with iOS 6 Captive Portal Detection
 		® gsp1.apple.com
@@ -244,5 +244,5 @@ Now we need to tell our DNS to point those addresses to at0 (Fake-AP interface).
 		® teredo.ipv6.microsoft.com
 		® teredo.ipv6.microsoft.com.nsatc.net
 		® gstatic.com  --> GET a /generate_204
-		® msftconnecttest.com  --> "GET a /redirect" o "GET /connecttest.txt" (W10
+		® msftconnecttest.com  --> "GET /redirect" or "GET /connecttest.txt" (W10)
 
