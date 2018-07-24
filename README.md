@@ -13,7 +13,7 @@ $ python3 app.py
 [?] Please enter the name of your wireless interface (for the AP): wlan1
 [?] Please enter the name of your internet connected interface: wlan0
 [?] Please enter the SSID for the AP: Telefonia2
-[?] Please enter the BSSID for the AP: 00:1F:45:7F:DD:1B
+[?] Please enter the BSSID for the AP: 00:XX:XX:7F:DD:XX
 [?] Please enter the channel for the AP: 7
 [?] Airbase-ng or hostapd? (A/h): A
 ```
@@ -62,7 +62,7 @@ wlan1     IEEE 802.11  Mode:Monitor  Frequency:2.442 GHz  Tx-Power=18 dBm
 eth0      no wireless extensions.
 
 wlan0     IEEE 802.11  ESSID:"Empresa2"
-          Mode:Managed  Frequency:2.442 GHz  Access Point: 00:1F:45:7F:DD:18
+          Mode:Managed  Frequency:2.442 GHz  Access Point: XX:1F:XX:7F:DD:XX
           Bit Rate=65 Mb/s   Tx-Power=31 dBm
           Retry short limit:7   RTS thr:off   Fragment thr:off
           Encryption key:off
@@ -128,16 +128,16 @@ wlan1: flags=867<UP,BROADCAST,NOTRAILERS,RUNNING,PROMISC,ALLMULTI>  mtu 1800
 When a device is connected to the AP, it send a request like: ```"GET /generate_204 HTTP/1.1"```:
 
 ```bash
-	dnsmasq-dhcp: DHCPREQUEST(at0) 10.0.0.64 30:07:4d:07:6f:6e 
-	dnsmasq-dhcp: DHCPACK(at0) 10.0.0.64 30:07:4d:07:6f:6e Galaxy-S8
+	dnsmasq-dhcp: DHCPREQUEST(at0) 10.0.0.64 XX:07:XX:07:XX:6e 
+	dnsmasq-dhcp: DHCPACK(at0) 10.0.0.64 XX:07:XX:07:XX:6e Galaxy-S8
 	10.0.0.64 - - [19/Jul/2018 07:02:22] "GET /generate_204 HTTP/1.1" 404 -
 	10.0.0.64 - - [19/Jul/2018 07:03:22] "GET /gen_204 HTTP/1.1" 404 - 
 ```
 iOS send a request like: ```"GET /hotspot-detect.html HTTP/1.1"```:
 
 ```bash
-	dnsmasq-dhcp: DHCPREQUEST(at0) 10.0.0.13 1c:5c:f2:65:9d:1b
-	dnsmasq-dhcp: DHCPACK(at0) 10.0.0.13 1c:5c:f2:65:9d:1b iPhonedeAlberto
+	dnsmasq-dhcp: DHCPREQUEST(at0) 10.0.0.13 XX:5c:XX:65:XX:1b
+	dnsmasq-dhcp: DHCPACK(at0) 10.0.0.13 XX:5c:XX:65:XX:1b iPhonedeAlberto
 	10.0.0.13 - - [24/Jul/2018 08:00:52] "GET /hotspot-detect.html HTTP/1.0" 404 -
 ```
 
@@ -187,8 +187,8 @@ Now we need to tell our DNS to point those addresses to at0 (Fake-AP interface).
 ### Network traffic:
 
 ```bash
-	dnsmasq-dhcp: DHCPREQUEST(at0) 10.0.0.47 dc:66:72:89:89:e3
-	dnsmasq-dhcp: DHCPACK(at0) 10.0.0.47 dc:66:72:89:89:e3 Android
+	dnsmasq-dhcp: DHCPREQUEST(at0) 10.0.0.47 XX:66:XX:89:XX:e3
+	dnsmasq-dhcp: DHCPACK(at0) 10.0.0.47 XX:66:XX:89:XX:e3 Android
 	10.0.0.47 - - [24/Jul/2018 10:11:58] "GET /generate_204 HTTP/1.1" 302 -
 	10.0.0.47 - - [24/Jul/2018 10:11:58] "GET /generate_204 HTTP/1.1" 302 -
 	10.0.0.47 - - [24/Jul/2018 10:11:58] "GET / HTTP/1.1" 200 -
