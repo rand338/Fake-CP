@@ -140,12 +140,35 @@ Android uses a Network Portal detection using the URL http://clients3.google.com
 - If we send a 204 code, Android will thinks we have Internet access.
 - IF we send a 302 redirect with the URL of the captive portal, Android will notify that it is a captive portal.
 
+iPhone uses a Network Portal detection using the URL http://captive.apple.com/hotspot-detect.html.
+
 We can implenet all those codes with Flask in this way:
 
 ```python
 	@app.route('/generate_204')
 	@app.route('/gen_204')
 	def android():
-		#return ('', 204)
 		return redirect("http://10.0.0.1/", code=302)
+		
+	@app.route('/hotspot-detect.html')
+	@app.route('/bag')
+	def iPhone():
+		return redirect("http://10.0.0.1/", code=302)
+		
 ```
+
+Now we need to tell our DNS to point those addresses to a host inside your network and then have that host reply 204 to the path /generate_204.
+
+```bash
+	10.0.0.1 connectivitycheck.android.com
+	10.0.0.1 connectivitycheck.gstatic.com
+	10.0.0.1 clients1.google.com
+	10.0.0.1 clients3.google.com
+	10.0.0.1 clients.l.google.com
+	10.0.0.1 captive.apple.com #For iPhone
+	10.0.0.1 1.1.1.1 #For Android 4.4.2
+```
+
+## PoC
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/F_CLqMGdkFU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
