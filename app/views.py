@@ -106,6 +106,7 @@ def download_file():
 
 @android_blueprint.route('/generate_204')
 @android_blueprint.route('/gen_204')
+@android_blueprint.route('/hotspot-detect.html')
 def android():
     return redirect("http://10.0.0.1/", code=302)
 
