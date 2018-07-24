@@ -168,7 +168,3 @@ Now we need to tell our DNS to point those addresses to a host inside your netwo
 	10.0.0.1 captive.apple.com #For iPhone
 	10.0.0.1 1.1.1.1 #For Android 4.4.2
 ```
-
-## PoC
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/F_CLqMGdkFU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
