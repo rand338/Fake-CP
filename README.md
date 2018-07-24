@@ -133,7 +133,7 @@ When a device is connected to the AP, it send a request like: ```"GET /generate_
 	10.0.0.64 - - [19/Jul/2018 07:02:22] "GET /generate_204 HTTP/1.1" 404 -
 	10.0.0.64 - - [19/Jul/2018 07:03:22] "GET /gen_204 HTTP/1.1" 404 - 
 ```
-iPhone send a request like: ```"GET /hotspot-detect.html HTTP/1.1"```:
+iOS send a request like: ```"GET /hotspot-detect.html HTTP/1.1"```:
 
 ```bash
 	dnsmasq-dhcp: DHCPREQUEST(at0) 10.0.0.13 1c:5c:f2:65:9d:1b
@@ -147,7 +147,7 @@ Android uses a Network Portal detection using the URL http://clients3.google.com
 - If we send a 204 code, Android will thinks we have Internet access.
 - IF we send a 302 redirect with the URL of the captive portal, Android will notify that it is a captive portal.
 
-iPhone works similarly, but uses a Network Portal detection using the URL http://captive.apple.com/hotspot-detect.html
+iOS works similarly, but uses a Network Portal detection using the URL http://captive.apple.com/hotspot-detect.html
 
 We can implenet all those codes with Python Flask in this way:
 
@@ -176,10 +176,41 @@ Now we need to tell our DNS to point those addresses to at0 (Fake-AP interface).
 	10.0.0.1 1.1.1.1 #For Android 4.4.2
 ```
 
-## PoC:
+## PoCs:
 
-[Android 7 - POC](https://youtu.be/F_CLqMGdkFU "Android - POC")
+[Android 7 - POC](https://youtu.be/F_CLqMGdkFU "Android 7 - POC")
 
-[iPhone - POC](https://youtu.be/3G0qOMTO-fE "iPhone -POC")
+[iPhone iOS 11.4 - POC](https://youtu.be/3G0qOMTO-fE "iPhone -POC")
 
 [Android 4.4.2 - POC](https://youtu.be/kriVf6gqB64 "Android 4.4.2 - POC")
+
+### Network traffic:
+
+```bash
+	dnsmasq-dhcp: DHCPREQUEST(at0) 10.0.0.47 dc:66:72:89:89:e3
+	dnsmasq-dhcp: DHCPACK(at0) 10.0.0.47 dc:66:72:89:89:e3 Android
+	10.0.0.47 - - [24/Jul/2018 10:11:58] "GET /generate_204 HTTP/1.1" 302 -
+	10.0.0.47 - - [24/Jul/2018 10:11:58] "GET /generate_204 HTTP/1.1" 302 -
+	10.0.0.47 - - [24/Jul/2018 10:11:58] "GET / HTTP/1.1" 200 -
+	10.0.0.47 - - [24/Jul/2018 10:11:58] "GET /static/css/stylesF.css HTTP/1.1" 200 -
+	10.0.0.47 - - [24/Jul/2018 10:11:58] "GET /static/css/all.css HTTP/1.1" 200 -
+	10.0.0.47 - - [24/Jul/2018 10:11:58] "GET /static/img/logo_escudo.png HTTP/1.1" 200 -
+	10.0.0.47 - - [24/Jul/2018 10:11:59] "GET /static/img/favicon.ico HTTP/1.1" 200 -
+	10.0.0.47 - - [24/Jul/2018 10:11:59] "GET /static/imgs/wall.jpg HTTP/1.1" 404 -
+	10.0.0.47 - - [24/Jul/2018 10:11:59] "GET /generate_204 HTTP/1.1" 302 -
+	10.0.0.47 - - [24/Jul/2018 10:11:59] "GET /generate_204 HTTP/1.1" 302 -
+	10.0.0.47 - - [24/Jul/2018 10:12:00] "GET /generate_204 HTTP/1.1" 302 -
+	10.0.0.47 - - [24/Jul/2018 10:12:00] "GET /generate_204 HTTP/1.1" 302 -
+	10.0.0.47 - - [24/Jul/2018 10:12:00] "GET /generate_204 HTTP/1.1" 302 -
+	10.0.0.47 - - [24/Jul/2018 10:12:09] "GET /generate_204 HTTP/1.1" 302 -
+	Android Linux 7.0 Chrome 67.0.3396.87
+	10.0.0.47
+	10.0.0.47 - - [24/Jul/2018 10:12:20] "POST / HTTP/1.1" 302 -
+```
+
+```bash
+	sqlite> select * from users;
+	test|test|2018-07-24 10:12|Android Linux 7.0 Chrome 67.0.3396.87|10.0.0.47
+```
+
+
