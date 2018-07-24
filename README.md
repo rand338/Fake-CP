@@ -175,3 +175,7 @@ Now we need to tell our DNS to point those addresses to at0 (Fake-AP interface).
 	10.0.0.1 captive.apple.com #For iPhone
 	10.0.0.1 1.1.1.1 #For Android 4.4.2
 ```
+
+## PoC:
+
+[Android - POC](https://youtu.be/F_CLqMGdkFU "Android - POC")
