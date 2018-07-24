@@ -125,7 +125,7 @@ wlan1: flags=867<UP,BROADCAST,NOTRAILERS,RUNNING,PROMISC,ALLMULTI>  mtu 1800
 
 ## How it works?
 
-When a device is connected to the AP, it send a request like: ```"GET /generate_204 HTTP/1.1"````:
+When a device is connected to the AP, it send a request like: ```"GET /generate_204 HTTP/1.1"```:
 
 ```bash
 	dnsmasq-dhcp: DHCPREQUEST(at0) 10.0.0.64 30:07:4d:07:6f:6e 
