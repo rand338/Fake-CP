@@ -61,7 +61,7 @@ try:
             print("[!] Please enter a channel number.")
 
 
-    fakeap = input("[?] Airbase-ng or hostapd? (A/h)")
+    fakeap = input("[?] Airbase-ng or hostapd? (A/h): ")
     if "A" in fakeap:
         print("[I] Starting Fake AP with airbase-ng...")
         #subprocess.Popen(["airbase-ng", "-e", ssid, "-a", bssid, "-c", channel, ap_iface])
