@@ -89,8 +89,8 @@ try:
     os.system("iptables -A FORWARD -i wlan1 -p tcp --dport 443 -j DROP")
     os.system("iptables -A FORWARD -i wlan0 -p tcp --dport 443 -j DROP")
 
-    os.system("iptables -A INPUT -j LOG -log--level 4")
-    os.system("iptables -A INPUT DROP")
+    #os.system("iptables -A INPUT -j LOG -log--level 4")
+    #os.system("iptables -A INPUT DROP")
 
     os.system("iptables -t nat -D POSTROUTING 1")
     os.system("iptables -P FORWARD ACCEPT")
