@@ -246,3 +246,12 @@ Now we need to tell our DNS to point those addresses to at0 (Fake-AP interface).
 		® gstatic.com  --> GET a /generate_204
 		® msftconnecttest.com  --> "GET /redirect" or "GET /connecttest.txt" (W10)
 
+
+### Errors
+```
+read failed: Network is down
+wi_read(): Network is down
+```
+```
+$ airmon-ng check kill
+```
