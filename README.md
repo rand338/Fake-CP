@@ -216,6 +216,9 @@ Now we need to tell our DNS to point those addresses to at0 (Fake-AP interface).
 #### DNS
 
 	Android Captive Portal Detection
+		® connectivitycheck.gstatic.com
+		® connectivitycheck.android.com
+		® clients.l.google.com
 		® clients3.google.com (1-9)
 	 
 	Apple iPhone, iPad with iOS 6 Captive Portal Detection
