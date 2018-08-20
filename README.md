@@ -224,6 +224,7 @@ Now we need to tell our DNS to point those addresses to at0 (Fake-AP interface).
 		® www.apple.com
 		® apple.com
 		® captive.apple.com
+		® init-p01st.push.apple.com
 	 
 	Apple iPhone, iPad with iOS 7, 8, 9 and recent versions of OS X
 		® www.appleiphonecell.com
